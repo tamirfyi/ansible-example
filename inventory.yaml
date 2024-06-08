@@ -1,5 +1,0 @@
-myhosts:
-  hosts:
-    mailserver:
-      ansible_host: mail.tamirmb.com
-      ansible_user: root
