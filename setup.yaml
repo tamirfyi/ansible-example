@@ -1,0 +1,23 @@
+- name: setup remote machine 
+  hosts: myhosts
+  tasks:
+  - name: ensure net-tool is at latest version
+    ansible.builtin.apt:
+      name: net-tools
+      state: latest 
+
+- name: template files
+  hosts: myhosts
+  tasks:
+  - name: template hello world file
+    ansible.builtin.template:
+      src: hello.txt
+      dest: /root/hello.txt 
+
+- name: verify services
+  hosts: myhosts
+  tasks:
+  - name: ensure httpd service is running
+    ansible.builtin.service:
+      name: ssh 
+      state: started
